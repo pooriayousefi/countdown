@@ -8,7 +8,7 @@ namespace
 {
 	auto countdown(size_t nsec) -> void
 	{
-		for (int i = nsec; i >= 0; --i)
+		for (auto i{ static_cast<int>(nsec) }; i >= 0; --i)
 		{
 			std::this_thread::sleep_for(std::chrono::seconds(1));
 			std::cout << ' ' << i;
